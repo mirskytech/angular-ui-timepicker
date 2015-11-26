@@ -1,7 +1,7 @@
 /*!
  * angular-ui-event
  * https://github.com/angular-ui/ui-event
- * Version: 1.0.0 - 2015-11-26T18:18:11.392Z
+ * Version: 1.0.0 - 2015-11-26T19:30:59.982Z
  * License: MIT
  */
 
