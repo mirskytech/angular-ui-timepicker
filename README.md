@@ -1,8 +1,8 @@
-# ui-timepicker [![built with gulp](http://gulpjs.com/img/builtwith.png)](http://gulpjs.com) [![Stories in Ready](https://badge.waffle.io/mirskytech/ui-timepicker.png?label=ready&title=Ready)](https://waffle.io/mirskytech/ui-timepicker)
+# ui-timepicker [![built with gulp](https://img.shields.io/badge/built_with-gulp-red.svg?style=flat)](http://gulpjs.com) [![Stories in Ready](https://badge.waffle.io/mirskytech/ui-timepicker.png?label=ready&title=Ready)](https://waffle.io/mirskytech/ui-timepicker)
 
 **A timepicker for angular with an intuitive interface.**
 
-![Screenshot](docs/_screenshot/original.png)
+![Screenshot](https://raw.githubusercontent.com/mirskytech/ui-timepicker/bower/docs/_screenshots/original.png)
 
 This is a fork of Kevin Zarknight's [original code](https://github.com/zarknight/ui-timepicker); thanks go
 to him for getting this started.
