@@ -11,7 +11,7 @@ angular.module("ui.timepicker", ["angularMoment"])
 
             replace: true,
 
-            template: '<div></div>',
+            template: '<div class="pop"></div>',
 
             link: function (scope, element, attrs) {
                 var _selection = d3.select(element[0]);

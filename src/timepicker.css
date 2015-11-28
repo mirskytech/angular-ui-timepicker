@@ -43,3 +43,44 @@
     stroke-weight: 0.1;
     fill: #f8b810;
 }
+
+
+
+
+.popnomore{display:none;}
+.pop {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 200px;
+    top:42px;
+    left:35px;
+    z-index:99;
+}
+
+/* arrows - :before and :after */
+.pop:before {
+    position: absolute;
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid #eee;
+    border-right: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    left: 7px;
+    top: -7px;
+    content: '';
+}
+
+.pop:after {
+    position: absolute;
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-bottom: 6px solid #eee;
+    border-right: 6px solid transparent;
+    left: 7px;
+    top: -6px;
+    content: '';
+}

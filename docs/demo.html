@@ -7,8 +7,9 @@
     <script src="../bower_components/moment/min/moment.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-moment/angular-moment.min.js"></script>
-    
+
     <script src="../src/timepicker.directive.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/timepicker.css">
 
     <style>
@@ -19,7 +20,7 @@
 </head>
 <body ng-controller="TimepickerDemoCtrl">
 
-    <ui-timepicker ng-model="mydatetime"></ui-timepicker>
+    <ui-timepicker ng-model="firstdatetime"></ui-timepicker>
 
     <button ng-click="showTime()">Show selected time</button>
 
@@ -34,6 +35,31 @@
             };
         }]);
     </script>
+<h3>
+    not inline
+</h3>
+
+<div style="clear:both; position:relative">
+<div class="row">
+    <div class="col-xs-3">
+        &nbsp;
+    </div>
+    <div class="col-xs-2">
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker3'>
+                <input type='text' class="form-control" value="{{ seconddatetime }}"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+            </div>
+        </div>
+        <ui-timepicker ng-model="seconddatetime"></ui-timepicker>
+    </div>
+</div>
+
+
+
+</div>
 
 </body>
 </html>
