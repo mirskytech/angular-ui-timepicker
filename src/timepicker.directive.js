@@ -6,7 +6,8 @@ angular.module("ui.timepicker", ["angularMoment"])
             require: 'ngModel',
 
             scope: {
-                datetime: '=ngModel'
+                datetime: '=ngModel',
+                increments: '='
             },
 
             replace: true,
@@ -14,6 +15,11 @@ angular.module("ui.timepicker", ["angularMoment"])
             template: '<div class="pop"></div>',
 
             link: function (scope, element, attrs) {
+
+                var _opts = {
+                    increments:scope.increments||1
+                }
+
                 var _selection = d3.select(element[0]);
 
                 var _arc = d3.svg.arc().startAngle(0 * (Math.PI / 180)).endAngle(360 * (Math.PI / 180));
@@ -122,28 +128,30 @@ angular.module("ui.timepicker", ["angularMoment"])
 
                         var k = (by - oy)/(bx - ox);
 
-                        var angel = Math.abs(Math.atan(k) / (Math.PI / 180));
-                        var targetAngel = 0;
+                        var angle = Math.abs(Math.atan(k) / (Math.PI / 180));
+                        var targetAngle = 0;
 
                         if (bx > 0 && by >= 0) {
-                            targetAngel = 90 - angel;
+                            targetAngle = 90 - angle;
                         } else if (bx >= 0 && by < 0) {
-                            targetAngel = 90 + angel;
+                            targetAngle = 90 + angle;
                         } else if (bx < 0 && by <= 0) {
-                            targetAngel = 270 - angel;
+                            targetAngle = 270 - angle;
                         } else if (bx <= 0 && by > 0) {
-                            targetAngel = 270 + angel;
+                            targetAngle = 270 + angle;
                         }
                         
-                        _value = _maxValue * (targetAngel / 360);
+                        _value = _maxValue * (targetAngle / 360);
 
                         // update scope.datetime
                         var hours = Math.floor(_value / 60);
                         hours = _setAsAM ? hours : (hours + 12);
 
+                        var minutes = Math.floor( (_value % 60) / _opts.increments) * _opts.increments;
+
                         scope.datetime = moment(scope.datetime)
                             .set('hour', hours)
-                            .set('minute', _value % 60)
+                            .set('minute', minutes)
                             .set('second', 0)
                             .toDate();
 
@@ -200,10 +208,10 @@ angular.module("ui.timepicker", ["angularMoment"])
                     selectedArc.attr("d", _arc);
 
                     // set the handler position
-                    var oAngel = 360 * _value / _maxValue;
+                    var oAngle = 360 * _value / _maxValue;
                     var r = _width / 2 - 5;
-                    var x = r * Math.cos((oAngel - 90) * Math.PI / 180);
-                    var y = r * Math.sin((oAngel - 90) * Math.PI / 180);
+                    var x = r * Math.cos((oAngle - 90) * Math.PI / 180);
+                    var y = r * Math.sin((oAngle - 90) * Math.PI / 180);
                     handler.attr('cx', x).attr('cy', y);
 
                     // update time label
