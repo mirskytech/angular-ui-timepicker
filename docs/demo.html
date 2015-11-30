@@ -51,13 +51,19 @@
     <div class="container" ng-controller="TimepickerDemoCtrl">
         <div class="row">
             <div class="col-xs-3">
-                <input ui-mirsky type="text" placeholder="test" />
+                <div class="input-group">
+                    <input class="form-control" ui-mirsky increments="15" ng-model="mirskyvar" type="text" placeholder="test" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
 
             </div>
         </div>
         <div class="row">
             <div class="col-xs-3">
                 <!--<ui-timepicker ng-model="firstdatetime"></ui-timepicker>-->
+                <h1 ng-bind="mirskyvar">aa</h1>
             </div>
         </div>
     </div>

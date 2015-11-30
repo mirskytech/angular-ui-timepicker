@@ -88,19 +88,19 @@ var inputPopup = function (scope, element, $compile) {
                 throw new Error('datetimepicker component should be placed within a relative positioned container');
             }
 
-            //widget.css({
-            //    top: vertical === 'top' ? 'auto' : position.top + element.outerHeight(),
-            //    bottom: vertical === 'top' ? position.top + element.outerHeight() : 'auto',
-            //    left: horizontal === 'left' ? (parent === element ? 0 : position.left) : 'auto',
-            //    right: horizontal === 'left' ? 'auto' : parent.outerWidth() - element.outerWidth() - (parent === element ? 0 : position.left)
-            //});
             widget.css({
-                display:'block',
-                top:'36px',
-                bottom:'auto',
-                left:'15px',
-                right:'auto'
-            })
+                top: vertical === 'top' ? 'auto' : position.top + element.outerHeight(),
+                bottom: vertical === 'top' ? position.top + element.outerHeight() : 'auto',
+                left: horizontal === 'left' ? (parent === element ? 0 : position.left) : 'auto',
+                right: horizontal === 'left' ? 'auto' : parent.outerWidth() - element.outerWidth() - (parent === element ? 0 : position.left)
+            });
+            //widget.css({
+            //    display:'block',
+            //    top:'36px',
+            //    bottom:'auto',
+            //    left:'15px',
+            //    right:'auto'
+            //})
         },
 
 
@@ -200,6 +200,10 @@ angular.module('ui.mirsky',[])
     .directive('uiMirsky', ['$compile', function($compile){
        return {
            replace:false,
+           scope: {
+               datetime:"=ngModel",
+               increments:"="
+           },
            template:'<div class="mirsky"></div>',
            link:function(scope, elem, attrs) {
                inputPopup(scope, elem, $compile);
