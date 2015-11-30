@@ -3,14 +3,22 @@
 <head>
     <title></title>
 
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/d3/d3.min.js"></script>
     <script src="../bower_components/moment/min/moment.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-moment/angular-moment.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="../src/timepicker.directive.js"></script>
+    <script src="../src/bootstrap-datetimepicker.js"></script>
+
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../src/timepicker.css">
+    <link rel="stylesheet" href="../src/bootstrap-datetimepicker.css" />
+
+
+
 
     <style>
         body {
@@ -18,14 +26,63 @@
         }
     </style>
 </head>
-<body ng-controller="TimepickerDemoCtrl">
+<body>
 
-    <ui-timepicker ng-model="firstdatetime"></ui-timepicker>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>inline</h3>
+                <ui-timepicker ng-model="_1"></ui-timepicker>
+            </div>
+            <div class="col-xs-3">
+                <h3>increments</h3>
+                <!--<ui-timepicker increments="15" ng-model="_2"></ui-timepicker>-->
+            </div>
+            <div class="col-xs-3">
+                <h3>attached to input</h3>
+                <div class='input-group date' id='datetimepicker3'>
+                    <input ui-timepicker ng-model="seconddatetime" type='text' class="form-control" value="{{ seconddatetime }}"/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                </div>
+            </div>
 
-    <button ng-click="showTime()">Show selected time</button>
+        </div>
+        <div class="row">
+
+            <div class='col-sm-6'>
+                <input type='text' class="form-control" id='datetimepicker4' />
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker4').datetimepicker();
+                });
+            </script>
+
+        </div>
+
+    </div>
+
+    <h1>new</h1>
+    <div class="container" ng-controller="TimepickerDemoCtrl">
+        <div class="row">
+            <div class="col-xs-3">
+                <div style="position:relative">
+                    <div ui-mirsky></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
 
     <script>
-        var app = angular.module("myapp", ["ui.timepicker"]);
+        var app = angular.module("myapp", ["ui.mirsky"]);
 
         app.controller("TimepickerDemoCtrl", ["$scope", function ($scope) {
             $scope.mydatetime = new Date();
@@ -35,31 +92,9 @@
             };
         }]);
     </script>
-<h3>
-    not inline
-</h3>
-
-<div style="clear:both; position:relative">
-<div class="row">
-    <div class="col-xs-3">
-        &nbsp;
-    </div>
-    <div class="col-xs-2">
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker3'>
-                <input type='text' class="form-control" value="{{ seconddatetime }}"/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                    </span>
-            </div>
-        </div>
-        <ui-timepicker ng-model="seconddatetime" increments="15"></ui-timepicker>
-    </div>
-</div>
 
 
 
-</div>
 
 </body>
 </html>

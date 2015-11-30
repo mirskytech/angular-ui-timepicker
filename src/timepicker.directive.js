@@ -1,5 +1,14 @@
+
+
 angular.module("ui.timepicker", ["angularMoment"])
-    .directive("uiTimepicker", ["moment", function (moment) {
+    .directive('uiMirsky', function() {
+        return {
+            replace:true,
+            template: '<div><input type="text" /><ul class="pop">name name name</ul></div>'
+
+        };
+    })
+    .directive("uiTimepicker", ["moment", "$document", function (moment, $document) {
         return {
             restrict: "EA",
             
@@ -12,12 +21,13 @@ angular.module("ui.timepicker", ["angularMoment"])
 
             replace: true,
 
-            template: '<div class="pop"></div>',
+            //template: '<div class="pop"></div>',
 
             link: function (scope, element, attrs) {
 
                 var _opts = {
-                    increments:scope.increments||1
+                    increments:scope.increments||1,
+                    popup:element[0].nodeName == 'INPUT'
                 }
 
                 var _selection = d3.select(element[0]);
@@ -44,7 +54,43 @@ angular.module("ui.timepicker", ["angularMoment"])
                 _selection.each(function (data) {
                     measure();
 
-                    var svg = d3.select(this).selectAll("svg").data([data]);
+                    var container = document.createElement('div');
+                    this.parentNode.appendChild(container);
+
+                    if(_opts.popup) {
+                        var input = angular.element(this);
+                        var _body = angular.element($document[0].body);
+
+                        //body.on('click', function() { console.log('blur'); });
+
+                        var popup = angular.element(container);
+
+                        popup.addClass('pop popnomore');
+
+                        var hide = function(e) {
+                            console.log('blurring');
+                            e.preventDefault(); e.stopPropagation();
+
+                            popup.addClass('popnomore');
+                            _body.off('click', hide);
+                        };
+
+
+
+                        input.on('focus', function(e){
+                            e.preventDefault();e.stopPropagation();
+                            popup.removeClass('popnomore');
+                            scope.$apply();
+                            _body.on('click', hide);
+                            return false;
+                        });
+
+
+                    }
+
+
+
+                    var svg = d3.select(container).selectAll("svg").data([data]);
 
                     var enter = svg.enter().append("svg")
                         .attr("class", "x1-timepicker-svg").append("g")
@@ -111,6 +157,7 @@ angular.module("ui.timepicker", ["angularMoment"])
 
                     // ---------- slider handler ------------------------------------------
                     var drag = d3.behavior.drag().on("drag", function () {
+
                         var eventX = d3.event.x;
                         var eventY = d3.event.y;
 
