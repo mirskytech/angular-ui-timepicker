@@ -1,7 +1,7 @@
 
 
 var inputPopup = function (scope, element, $compile) {
-    var input,
+    var input = $(element),
         component = false,
         widget = false,
         options = {
@@ -13,31 +13,39 @@ var inputPopup = function (scope, element, $compile) {
             ignoreReadonly: false,
             keepOpen: false,
             focusOnShow: true,
-            inline: false,
-            datepickerInput: '.datepickerinput'
+            inline: false
         },
-         _w = 200,  _h = _w,  _diameter = _w,  _margin = { top:10, right:10, bottom:10, left:10}, _fontSize = 10,
+
+        _selection = null,
+        _arc = null,
+         _w = 200,  _h = _w,  _diameter = _w,
+        _margin = { top:10, right:10, bottom:10, left:10}, _fontSize = 10,
+        _width, _height, _x0, _y0,
+        _minValue = 1,
+        _maxValue = 720,
+        _value = 1,
+        _setAsAM = false,
         createTime = function(scope, element, attrs) {
         var _opts = {
             increments:scope.increments||1
         };
 
-        var _selection = d3.select(element);
+        _selection = d3.select(element);
 
-        var _arc = d3.svg.arc().startAngle(0 * (Math.PI / 180)).endAngle(360 * (Math.PI / 180));
+        _arc = d3.svg.arc().startAngle(0 * (Math.PI / 180)).endAngle(360 * (Math.PI / 180));
 
 
 
-        var _width;
-        var _height;
-        var _x0;
-        var _y0;
+        //var _width;
+        //var _height;
+        //var _x0;
+        //var _y0;
 
-        var _minValue = 1;
-        var _maxValue = 720;
-        var _value = 1;
+        //var _minValue = 1;
+        //var _maxValue = 720;
+        //var _value = 1;
 
-        var _setAsAM = false;
+        //var _setAsAM = false;
 
         _selection.each(function (data) {
             measure();
@@ -386,11 +394,6 @@ var inputPopup = function (scope, element, $compile) {
             }
         };
 
-    if(element.length) {
-        input = $(element[0]);
-    } else {
-        input = element;
-    }
 
     attachPopupElementEvents();
 
