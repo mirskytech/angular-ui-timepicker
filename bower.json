@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-timepicker",
-  "homepage": "https://github.com/zarknight/ui-timepicker/",
+  "homepage": "https://mirskytech.github.io/angular-ui-timepicker",
   "description": "circular slider for selecting time",
   "main": "angular-ui-timepicker.min.js",
   "moduleType": [],
