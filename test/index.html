@@ -17,17 +17,17 @@
 
     <style>
         body {
-            background: #555555;
+            /*background: #555555;*/
         }
     </style>
 </head>
 <body>
 
-    <div class="container" ng-controller="TimepickerDemoCtrl">
+    <div class="container" ng-controller="TimepickerDemoCtrl" style="padding-top:100px;">
         <div class="row">
             <div class="col-xs-3">
                 <div class="input-group">
-                    <input class="form-control" ui-timepicker increments="15" ng-model="mirskyvar" type="text" placeholder="test" />
+                    <input class="form-control" ui-timepicker increments="1" ng-model="mirskyvar" type="text" placeholder="time" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
@@ -35,7 +35,7 @@
             </div>
             <div class="col-xs-3">
                 <div class="input-group">
-                    <input class="form-control" ui-timepicker increments="15" ng-model="foobar" type="text" placeholder="test" />
+                    <input class="form-control" ui-timepicker increments="15" ng-model="foobar" type="text" placeholder="time" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
@@ -45,10 +45,10 @@
         <div class="row">
             <div class="col-xs-3">
                 <!--<ui-timepicker ng-model="firstdatetime"></ui-timepicker>-->
-                <h1 ng-bind="mirskyvar">aa</h1>
+                <!--<h1 ng-bind="mirskyvar">aa</h1>-->
             </div>
             <div class="col-xs-3">
-                <h1 ng-bind="foobar">bb</h1>
+                <!--<h1 ng-bind="foobar">bb</h1>-->
             </div>
         </div>
     </div>

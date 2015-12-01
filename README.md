@@ -1,11 +1,8 @@
-# ui-timepicker [![built with gulp](https://img.shields.io/badge/built_with-gulp-red.svg?style=flat)](http://gulpjs.com) [![Stories in Ready](https://badge.waffle.io/mirskytech/ui-timepicker.png?label=ready&title=Ready)](https://waffle.io/mirskytech/ui-timepicker)
+# angular-ui-timepicker [![built with gulp](https://img.shields.io/badge/built_with-gulp-red.svg?style=flat)](http://gulpjs.com) [![Stories in Ready](https://badge.waffle.io/mirskytech/ui-timepicker.png?label=ready&title=Ready)](https://waffle.io/mirskytech/ui-timepicker)
 
-**A timepicker for angular with an intuitive interface.**
+**circular slider for selecting time**
 
-![Screenshot](https://raw.githubusercontent.com/mirskytech/ui-timepicker/bower/docs/_screenshots/original.png)
-
-This is a large rewrite and packaging of [@zarknight](https://github.com/zarknight/ui-timepicker). Additional thanks go
-to [@eonasdan](https://github.com/Eonasdan/bootstrap-datetimepicker) for his work on interactive popovers on inputs without losing focus.
+![Screenshot](https://raw.githubusercontent.com/mirskytech/angular-ui-timepicker/master/_images/angular-ui-timepicker.v0.1.png)
 
 ## Getting started
 
@@ -29,7 +26,7 @@ bower install angular-ui-timepicker
 Include the javascript and css files:
 
 ```javascript
-<script src="jquer.min.js"></script>
+<script src="jquery.min.js"></script>
 <script src="boostrap.min.js"></script>
 <script src="d3.min.js"></script>
 <script src="moment.min.js"></script>
@@ -57,6 +54,13 @@ Configuration information can be found on the [project home page](https://mirsky
 ## Issue tracking
 
 All upcoming features and issues can be tracked at [waffle.io](https://waffle.io/mirskytech/angular-ui-timepicker).
+
+## Contributions
+
+This is a large rewrite and packaging of [@zarknight](https://github.com/zarknight/ui-timepicker). Additional thanks go
+to [@eonasdan](https://github.com/Eonasdan/bootstrap-datetimepicker) for his work on interactive popovers on inputs
+without losing focus.
+
 
 ## License
 
