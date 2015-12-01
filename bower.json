@@ -23,7 +23,7 @@
     "docs"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
     "d3": "~3.5.9",
     "moment": "~2.10.6",
     "angular": "~1.4.8",
