@@ -1,8 +1,8 @@
 {
-  "name": "ui-timepicker",
+  "name": "angular-ui-timepicker",
   "homepage": "https://github.com/zarknight/ui-timepicker/",
-  "description": "time picker for angular",
-  "main": "timepicker.directive.js",
+  "description": "circular slider for selecting time",
+  "main": "angular-ui-timepicker.min.js",
   "moduleType": [],
   "keywords": [
     "timepicker",
@@ -17,15 +17,18 @@
     "tests",
     "demo",
     "package.json",
-    "gulpfile.js"
+    "gulpfile.js",
+    "src",
+    "pre",
+    "docs"
   ],
   "dependencies": {
+    "bootstrap": "~3.3.6"
     "d3": "~3.5.9",
     "moment": "~2.10.6",
     "angular": "~1.4.8",
     "angular-moment": "~0.10.3"
   },
   "devDependencies": {
-    "bootstrap": "~3.3.6"
   }
 }

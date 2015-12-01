@@ -17,7 +17,7 @@ to him for getting this started.
 ### Install with bower
 
 ```
-bower install mirskytech/ui-timepicker
+bower install angular-ui-timepicker
 ```
 
 ## Usage

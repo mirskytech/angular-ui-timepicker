@@ -58,7 +58,7 @@ gulp.task('scripts', ['clean'], function() {
             .pipe(plumber({
                 errorHandler: handleError
             }))
-            .pipe(concat('timepicker.directive.js'))
+            .pipe(concat('angular-ui-timepicker.js'))
             .pipe(header(config.banner, {
                 timestamp: (new Date()).toISOString(), pkg: config.pkg
             }))

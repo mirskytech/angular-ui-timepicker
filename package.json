@@ -1,9 +1,11 @@
 {
-  "name": "angular-ui-event",
-  "version": "0.0",
-  "author": "https://github.com/angular-ui/ui-event/graphs/contributors",
-  "license": "MIT",
-  "homepage": "https://github.com/angular-ui/ui-event",
+  "name": "angular-ui-timepicker",
+  "version": "0.1.0",
+  "description": "circular slider for selecting time",
+  "main": "build/angular-ui-timepicker.min.js",
+  "directories": {
+    "doc": "docs"
+  },
   "dependencies": {},
   "devDependencies": {
     "del": "~1.2.0",
@@ -30,14 +32,23 @@
     "phantomjs": "^1.9.18",
     "run-sequence": "^1.1.2"
   },
-  "scripts": {},
-  "main": "./dist/event.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zarknight/ui-timepicker/"
+    "url": "git+https://github.com/mirskytech/angular-ui-timepicker.git"
   },
   "keywords": [
     "angular",
-    "angular-ui"
-  ]
+    "timepicker",
+    "angular",
+    "ui"
+  ],
+  "author": "Andrew Mirsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mirskytech/angular-ui-timepicker/issues"
+  },
+  "homepage": "https://github.com/mirskytech/angular-ui-timepicker#readme"
 }
