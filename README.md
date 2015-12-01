@@ -4,8 +4,8 @@
 
 ![Screenshot](https://raw.githubusercontent.com/mirskytech/ui-timepicker/bower/docs/_screenshots/original.png)
 
-This is a fork of Kevin Zarknight's [original code](https://github.com/zarknight/ui-timepicker); thanks go
-to him for getting this started.
+This is a large rewrite and packaging of [@zarknight](https://github.com/zarknight/ui-timepicker). Additional thanks go
+to [@eonasdan](https://github.com/Eonasdan/bootstrap-datetimepicker) for his work on interactive popovers on inputs without losing focus.
 
 ## Getting started
 
