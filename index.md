@@ -5,7 +5,7 @@ title: angular-ui-timepicker
 
 [![built with gulp](https://img.shields.io/badge/built_with-gulp-red.svg?style=flat)](http://gulpjs.com) [![Stories in Ready](https://badge.waffle.io/mirskytech/ui-timepicker.png?label=ready&title=Ready)](https://waffle.io/mirskytech/ui-timepicker)
 
-![Screenshot](/images/angular-ui-timepicker.screenshot.png)
+![Screenshot](images/angular-ui-timepicker.screenshot.png)
 
 ## Getting started
 
