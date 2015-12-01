@@ -1,0 +1,24 @@
+{
+  "name": "angular-ui-timepicker project site",
+  "homepage": "https://mirskytech.github.io/angular-ui-timepicker/",
+  "authors": [
+    "Andrew Mirsky <andrew@mirsky.net>"
+  ],
+  "description": "project site for angular-ui-timepicker",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ui-timepicker": "angular-ui-timepicker#*"
+  }
+}

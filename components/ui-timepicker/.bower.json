@@ -1,0 +1,41 @@
+{
+  "name": "ui-timepicker",
+  "homepage": "https://github.com/zarknight/ui-timepicker/",
+  "description": "time picker for angular",
+  "main": "timepicker.directive.js",
+  "moduleType": [],
+  "keywords": [
+    "timepicker",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo",
+    "package.json",
+    "gulpfile.js"
+  ],
+  "dependencies": {
+    "d3": "~3.5.9",
+    "moment": "~2.10.6",
+    "angular": "~1.4.8",
+    "angular-moment": "~0.10.3"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.6"
+  },
+  "_release": "de33d779ad",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "de33d779ad4d407faabdf2c7b7f0b5e108c40d98"
+  },
+  "_source": "git://github.com/mirskytech/angular-ui-timepicker.git",
+  "_target": "*",
+  "_originalSource": "angular-ui-timepicker",
+  "_direct": true
+}

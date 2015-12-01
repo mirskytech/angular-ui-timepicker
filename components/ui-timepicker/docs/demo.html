@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <title></title>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/d3/d3.min.js"></script>
+    <script src="../bower_components/moment/min/moment.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-moment/angular-moment.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="../src/angular-ui-timepicker.js"></script>
+
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/angular-ui-timepicker.css">
+
+    <style>
+        body {
+            background: #555555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" ng-controller="TimepickerDemoCtrl">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <input class="form-control" ui-timepicker increments="15" ng-model="mirskyvar" type="text" placeholder="test" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group">
+                    <input class="form-control" ui-timepicker increments="15" ng-model="foobar" type="text" placeholder="test" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <!--<ui-timepicker ng-model="firstdatetime"></ui-timepicker>-->
+                <h1 ng-bind="mirskyvar">aa</h1>
+            </div>
+            <div class="col-xs-3">
+                <h1 ng-bind="foobar">bb</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module("myapp", ["ui.timepicker"]);
+
+        app.controller("TimepickerDemoCtrl", ["$scope", function ($scope) {
+            $scope.mydatetime = new Date();
+
+            $scope.showTime = function () {
+                alert(moment($scope.mydatetime).format("HH:mm"));
+            };
+        }]);
+
+        app.controller("MirskyDemoCtrl", ["$scope", function($scope) {
+            $scope.mirskyvar = 33;
+        }]);
+
+    </script>
+
+</body>
+</html>
