@@ -23,23 +23,46 @@
 </head>
 <body>
 
-    <div class="container" ng-controller="TimepickerDemoCtrl" style="padding-top:100px;">
+    <div class="container" style="padding-top:100px;">
         <div class="row">
-            <div class="col-xs-3">
+            <div class="col-xs-3" ng-controller="Example1Controller">
+                <h2>default</h2>
                 <div class="input-group">
-                    <input class="form-control" ui-timepicker increments="1" ng-model="mirskyvar" type="text" placeholder="time" />
+                    <input class="form-control" ui-timepicker ng-model="_1" type="text" placeholder="time" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
                 </div>
+                <script>
+                    var example1app = angular.module("example1app", ["ui.timepicker"]);
+                    example1app.controller("Example1Controller", ["$scope", function ($scope) { }]);
+                </script>
             </div>
-            <div class="col-xs-3">
+            <!--<div class="col-xs-3" ng-controller="Example2Controller">-->
+                <!--<h2>inline options</h2>-->
+                <!--<div class="input-group">-->
+                    <!--<input class="form-control" ui-timepicker options="{format:'H:mm'}"  ng-model="_2" type="text" placeholder="time" />-->
+                    <!--<span class="input-group-addon">-->
+                        <!--<span class="glyphicon glyphicon-time"></span>-->
+                    <!--</span>-->
+                <!--</div>-->
+                <!--<script>-->
+                    <!--var example2app = angular.module("example2app", ["ui.timepicker"]);-->
+                    <!--example2app.controller("Example2Controller", ["$scope", function ($scope) { }]);-->
+                <!--</script>-->
+            <!--</div>-->
+            <div class="col-xs-3" ng-controller="Example3Controller">
+                <h2>move by increments</h2>
                 <div class="input-group">
-                    <input class="form-control" ui-timepicker increments="15" ng-model="foobar" type="text" placeholder="time" />
+                    <input class="form-control" ui-timepicker options="{increments:5}"  ng-model="_2" type="text" placeholder="time" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
                 </div>
+                <script>
+                    var example3app = angular.module("example3app", ["ui.timepicker"]);
+                    example3app.controller("Example3Controller", ["$scope", function ($scope) { }]);
+                </script>
             </div>
         </div>
         <div class="row">
@@ -48,26 +71,14 @@
                 <!--<h1 ng-bind="mirskyvar">aa</h1>-->
             </div>
             <div class="col-xs-3">
-                <!--<h1 ng-bind="foobar">bb</h1>-->
+                <h1 ng-bind="mydattime"></h1>
             </div>
         </div>
     </div>
 
     <script>
         var app = angular.module("myapp", ["ui.timepicker"]);
-
-        app.controller("TimepickerDemoCtrl", ["$scope", function ($scope) {
-            $scope.mydatetime = new Date();
-
-            $scope.showTime = function () {
-                alert(moment($scope.mydatetime).format("HH:mm"));
-            };
-        }]);
-
-        app.controller("MirskyDemoCtrl", ["$scope", function($scope) {
-            $scope.mirskyvar = 33;
-        }]);
-
+        app.controller("Example1Controller", ["$scope", function ($scope) { }]);
     </script>
 
 </body>

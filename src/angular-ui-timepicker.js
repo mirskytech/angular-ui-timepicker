@@ -1,20 +1,20 @@
 
 
-var inputPopup = function (scope, element, $compile) {
+var inputPopup = function (scope, element, options, $compile) {
     var input = $(element),
         component = false,
         widget = false,
-        options = {
-            widgetPositioning: {
-                horizontal: 'auto',
-                vertical: 'auto'
-            },
-            widgetParent: null,
-            ignoreReadonly: false,
-            keepOpen: false,
-            focusOnShow: true,
-            inline: false
-        },
+        //options = {
+        //    widgetPositioning: {
+        //        horizontal: 'auto',
+        //        vertical: 'auto'
+        //    },
+        //    widgetParent: null,
+        //    ignoreReadonly: false,
+        //    keepOpen: false,
+        //    focusOnShow: true,
+        //    inline: false
+        //},
 
         _selection = null,
         _arc = null,
@@ -153,7 +153,7 @@ var inputPopup = function (scope, element, $compile) {
                 var hours = Math.floor(_value / 60);
                 hours = _setAsAM ? hours : (hours + 12);
 
-                var minutes = Math.floor( (_value % 60) / _opts.increments) * _opts.increments;
+                var minutes = Math.floor( (_value % 60) / options.increments) * options.increments;
 
                 scope.datetime = moment(scope.datetime)
                     .set('hour', hours)
@@ -400,17 +400,46 @@ var inputPopup = function (scope, element, $compile) {
 };
 
 
-angular.module('ui.timepicker',[])
-    .directive('uiTimepicker', ['$compile', function($compile){
+angular.module('ui.timepicker',['angularMoment'])
+    .directive('uiTimepicker', ['$compile',  'moment', function($compile, moment){
+
+        var _defaults = {
+            increments:1,
+            format:'h:mm a',
+            widgetPositioning: {
+                horizontal: 'auto',
+                vertical: 'auto'
+            },
+            widgetParent: null,
+            ignoreReadonly: false,
+            keepOpen: false,
+            focusOnShow: true,
+            inline: false
+        };
+
+
+
+
         return {
             replace:false,
+            require: 'ngModel',
             scope: {
                 datetime:"=ngModel",
-                increments:"="
+                options:"="
             },
-            template:'<div class="mirsky"></div>',
-            link:function(scope, elem, attrs) {
-                inputPopup(scope, elem, $compile);
+            template:'<div class="angular-ui-timepicker"></div>',
+            link:function(scope, elem, attrs, ngModel) {
+                console.log(scope.options);
+                var opts = angular.merge({}, _defaults, scope.options||{});
+                console.log(opts);
+                inputPopup(scope, elem, opts, $compile);
+
+                ngModel.$formatters.push(function(value) {
+
+                    if(!value) return value;
+                    return moment(value).format(opts.format);
+
+                });
             }
         }
     }]);
