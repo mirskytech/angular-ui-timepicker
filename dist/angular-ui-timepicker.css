@@ -417,7 +417,9 @@
     fill: #f8b810;
 }
 
-
+.x1-timepicker-svg .x1-timepicker-handler {
+    fill: #bbb;
+}
 
 
 .popnomore{display:none;}
