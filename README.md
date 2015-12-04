@@ -42,7 +42,7 @@ Use in your html:
 
 ```html
     <div class="input-group">
-        <input class="form-control" ui-timepicker increments="15" ng-model="mydatetime" type="text" placeholder="time" />
+        <input class="form-control" ui-timepicker ng-model="mydatetime" type="text" placeholder="time" />
         <span class="input-group-addon">
             <span class="glyphicon glyphicon-time"></span>
         </span>
