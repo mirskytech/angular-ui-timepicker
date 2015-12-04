@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>{{ page.title }}</title>
+        <title>angular-ui-timepicker :: {{ page.title }}</title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -41,18 +41,9 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li>
-                    <a class="current" href="#">project home</a>
-                </li>
-                <li>
-                    <a href="#">installation</a>
-                </li>
-                <li>
-                    <a href="#">usage</a>
-                </li>
-                <li>
-                    <a href="#">examples</a>
-                </li>
+                {% for item in site.data.menu %}
+                    <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                {% endfor %}
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

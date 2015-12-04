@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-timepicker",
-  "homepage": "https://github.com/zarknight/ui-timepicker/",
+  "homepage": "https://mirskytech.github.io/angular-ui-timepicker",
   "description": "circular slider for selecting time",
   "main": "angular-ui-timepicker.min.js",
   "moduleType": [],
@@ -30,11 +30,11 @@
     "angular-moment": "~0.10.3"
   },
   "devDependencies": {},
-  "_release": "4e76a2770c",
+  "_release": "b763c3a2cb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4e76a2770ce4c1604ce46bd8199fe9d7fecc5311"
+    "commit": "b763c3a2cb62077861e22b088cfe1a7671ba832a"
   },
   "_source": "git://github.com/mirskytech/angular-ui-timepicker.git",
   "_target": "*",

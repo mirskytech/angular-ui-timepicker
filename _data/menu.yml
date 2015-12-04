@@ -1,0 +1,15 @@
+- name: project home
+  link: index.html
+
+- name: installation
+  link: installation.html
+
+- name: configuration
+  link: configuration.html
+
+- name: examples
+  link: examples.html
+
+- name: issues
+  link: http://waffle.io/mirskytech/angular-ui-timepicker
+
