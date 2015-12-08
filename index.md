@@ -14,9 +14,11 @@ Install with **bower**:
 
     bower install angular-ui-timepicker
 
-Include script, css and dependencies (see [Installation](getstarted.html) page) and add the attribute to your form field:
+Include script, css and dependencies (see [Installation](getstarted.html) page), add `ui-timepicker` as a dependency to
+the angular app and add the `ui-timepicker` attribute to your form field:
 
     <input type="text" ui-timepicker />
+
 
 ### Issue tracking
 

@@ -204,7 +204,23 @@ a.button small {
     text-align:center;
 }
 
+table {
+    border:1px #333 solid;
+}
 
+table th {
+    text-align:center;
+    text-transform:uppercase;
+}
 
+table td, table th {
+    width:20%;
+    border:1px #999 solid;
+    padding:4px;
+}
+
+table td:nth-child(3) {
+    width:60%;
+}
 
 
