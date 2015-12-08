@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-timepicker",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "circular slider for selecting time",
   "main": "dist/angular-ui-timepicker.min.js",
   "directories": {

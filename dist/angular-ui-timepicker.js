@@ -1,7 +1,7 @@
 /*!
  * angular-ui-timepicker
  * https://mirskytech.github.io/angular-ui-timepicker
- * Version: 0.1.1 - 2015-12-04T20:58:57.555Z
+ * Version: 0.2.0 - 2015-12-08T15:25:05.715Z
  * License: MIT
  */
 
